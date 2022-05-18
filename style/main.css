@@ -1,0 +1,77 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+.grid-for-monitor{
+    display: grid;
+    height: 100vh;
+    grid-template-rows: 52px 1fr;
+    grid-template-areas: 
+    "header"
+    "main";
+}
+
+.header{
+    grid-area: header;
+    background-color: #648ca6;
+}
+
+.main{
+    grid-area: main;
+    background-color: #394263;
+    display: grid;
+    grid-auto-rows:min-content;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: 
+    "top-area top-area"
+    "left-column right-column";
+    padding: 20px;
+    gap: 20px;
+}
+/*Top area*/
+.top-area{
+    grid-area: top-area;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px,1fr));
+    grid-template-areas: 
+    "configuration-tile configuration-tile";
+    margin-bottom: 24px;
+    gap:20px;
+}
+
+.configuration-tile{
+    grid-area: configuration-tile;
+    height: 148px;
+    background-color:aqua;
+}
+
+.action-tile{
+    height: 148px;
+    background-color:red;
+}
+
+
+.left-column{
+    padding:100px;
+    grid-area:left-column;
+    background-color: #d2d2d2;
+}
+.right-column{
+    padding:100px;
+    grid-area: right-column;
+    background-color: #d2d2d2;
+}
+
+.box{
+    padding: 20px;
+}
+
+@media only screen and (max-width: 900px){
+   .main{
+    grid-template-areas: 
+    "top-area top-area"
+    "left-column left-column"
+    "right-column right-column";
+   }
+}
